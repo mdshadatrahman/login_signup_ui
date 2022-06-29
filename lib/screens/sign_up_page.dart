@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -32,16 +33,19 @@ class _SignUpPageState extends State<SignUpPage> {
                 },
                 behavior: HitTestBehavior.opaque,
                 child: Center(
-                  child: Container(
-                    height: 48,
-                    width: 48,
-                    decoration: BoxDecoration(
-                      color: Colors.blue[700],
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 65),
+                    child: Container(
+                      height: 48,
+                      width: 48,
+                      decoration: BoxDecoration(
+                        color: Colors.blue[700],
+                        shape: BoxShape.circle,
+                      ),
+                      child: Icon(
+                        Icons.arrow_back,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -257,6 +261,14 @@ class _SignUpPageState extends State<SignUpPage> {
                                   ],
                                   shape: BoxShape.circle,
                                 ),
+                                child: _isLoading
+                                    ? SpinKitDoubleBounce(
+                                        color: Colors.blue,
+                                      )
+                                    : Icon(
+                                        Icons.arrow_forward,
+                                        color: Colors.blue,
+                                      ),
                               ),
                             ),
                           )
